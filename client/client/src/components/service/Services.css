@@ -1,0 +1,34 @@
+/* src/components/Services.css */
+.services {
+    padding: 4rem 0;
+    background-color: #fff;
+    text-align: center;
+  }
+  .services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .service-item {
+    background: #f7f7f7;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ff6600;
+  }
+  .service-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  

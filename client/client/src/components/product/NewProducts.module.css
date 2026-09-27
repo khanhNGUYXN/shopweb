@@ -1,0 +1,129 @@
+.newProducts {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.categoryTabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  background-color: transparent;
+  border: none;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.tabBtn.active {
+  border-bottom: 2px solid black;
+}
+
+/* Hiển thị sản phẩm theo hàng ngang */
+.productList {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  /* Loại bỏ margin trái cứng để dễ điều chỉnh trên mobile */
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.productItem {
+  width: 200px;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container chứa ảnh cố định tỷ lệ 1:1 */
+.productImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+/* Ảnh chiếm toàn bộ container, crop theo tỷ lệ */
+.productImage img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.productName {
+  margin: 0.5rem 0 0;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.productPrice {
+  margin-top: 5%;
+  color: #e60023;
+  font-weight: bold;
+}
+
+.seeMore {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+
+.seeMore .btn {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.seeMore .btn:hover {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+}
+
+.noUnderline {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .productItem {
+    width: 150px;
+  }
+  .tabBtn {
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .productItem {
+    width: 120px;
+  }
+  .seeMore .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,155 @@
+/* Toàn bộ overlay: nền tối phủ toàn màn hình */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Flexbox để đẩy khung tìm kiếm sang phải */
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 200;
+}
+
+/* Khung tìm kiếm: chiếm 1/3 màn hình bên phải */
+.search-content {
+  background: #fff;
+  width: 33%;
+  max-width: 600px; /* Giới hạn chiều rộng tối đa */
+  padding: 2rem;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Animation khi mở (slide-in) */
+.slide-in {
+  animation: slideInFromRight 0.4s ease-out forwards;
+}
+
+/* Animation khi đóng (slide-out) */
+.slide-out {
+  animation: slideOutToRight 0.4s ease-out forwards;
+}
+
+/* Keyframes cho hiệu ứng mở */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Keyframes cho hiệu ứng đóng */
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Nút đóng ở góc trên bên phải khung tìm kiếm */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Ví dụ đơn giản cho ô tìm kiếm */
+.search-box {
+  position: relative;  /* Để định vị phần tử con theo absolute */
+  margin-top: 1rem;
+}
+
+.search-box input {
+  width: 90%;
+  padding: 1rem 3rem 1rem 1rem;  /* Thêm padding bên phải để dành chỗ cho icon */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #ccc;
+}
+
+.search-box input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Button icon bên trong input */
+.search-icon-btn {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;  /* Khoảng cách từ bên phải của input */
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Loại bỏ padding mặc định nếu có */
+}
+
+/* Nếu muốn chỉnh sửa kích thước icon hoặc hover effect, bạn có thể thêm: */
+.search-icon-btn svg {
+  display: block;
+}
+
+.search-icon-btn:hover svg {
+  stroke: #000;
+}
+
+/* Responsive Styles */
+
+/* Khi màn hình dưới 1024px, giảm padding và chiều rộng khung tìm kiếm */
+@media (max-width: 1024px) {
+  .search-content {
+    width: 50%;
+    padding: 1.5rem;
+  }
+}
+
+/* Khi màn hình dưới 768px: khung tìm kiếm chiếm 80% */
+@media (max-width: 768px) {
+  .search-content {
+    width: 80%;
+    padding: 1.2rem;
+  }
+  .close-btn {
+    font-size: 1.3rem;
+  }
+  .search-box input {
+    width: 85%;
+    padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+  }
+}
+
+/* Khi màn hình dưới 480px: tối ưu thêm cho mobile */
+@media (max-width: 480px) {
+  .search-content {
+    width: 100%;
+    padding: 1rem;
+  }
+  .close-btn {
+    font-size: 1.2rem;
+  }
+  .search-box input {
+    width: 80%;
+    padding: 0.7rem 2rem 0.7rem 0.7rem;
+  }
+  .search-icon-btn {
+    right: 0.3rem;
+  }
+}

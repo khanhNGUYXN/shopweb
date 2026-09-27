@@ -1,0 +1,137 @@
+/* Container chính */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Nội dung chính */
+  .content {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Tiêu đề */
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Thanh tìm kiếm */
+  .searchBar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .searchInput {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .searchButton {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .searchButton:hover {
+    background-color: #218838;
+  }
+  
+  /* Bảng đơn hàng */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th,
+  table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  table td {
+    color: #333;
+  }
+  
+  /* Cột trạng thái */
+  select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  /* Nút hành động */
+  .actionsButton {
+    text-align: center;
+  }
+  
+  .actionsButton button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .actionsButton button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Đơn hàng đã hủy */
+  .canceledOrders {
+    margin-top: 40px;
+  }
+  
+  .canceledOrders h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #dc3545;
+    margin-bottom: 20px;
+  }
+  
+  /* Thông báo lỗi */
+  .error {
+    color: #dc3545;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  /* Loader */
+  .loader {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-top: 20px;
+  }
+  

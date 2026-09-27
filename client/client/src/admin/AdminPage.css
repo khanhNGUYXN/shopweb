@@ -1,0 +1,112 @@
+/* Tổng quan container */
+.admin-container {
+	display: flex;
+	min-height: 100vh;
+	background: #f0f2f5;
+	font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+	width: 250px;
+	background-color: #2c3e50;
+	color: #ecf0f1;
+	padding: 30px 20px;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease;
+  }
+  
+  .sidebar:hover {
+	background-color: #34495e;
+  }
+  
+  .sidebar h2 {
+	margin: 0 0 25px;
+	font-size: 1.8rem;
+	text-align: center;
+	border-bottom: 1px solid #7f8c8d;
+	padding-bottom: 15px;
+  }
+  
+  .sidebar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+  .sidebar ul li {
+	margin-bottom: 20px;
+  }
+  
+  /* Link và button trong sidebar */
+  .sidebar ul li a,
+  .sidebar ul li button {
+	display: block;
+	width: 100%;
+	color: #ecf0f1;
+	text-decoration: none;
+	padding: 12px 15px;
+	border-radius: 6px;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	background: transparent;
+	border: none;
+	font-size: 1rem;
+	cursor: pointer;
+	text-align: left;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li button:hover {
+	background-color: #3d566e;
+	transform: scale(1.02);
+  }
+  
+  /* Dropdown cho "Thêm Sản Phẩm" */
+  .sidebar ul li ul {
+	list-style: none;
+	padding-left: 20px;
+	margin-top: 10px;
+	border-left: 2px solid #3d566e;
+  }
+  
+  .sidebar ul li ul li {
+	margin-bottom: 15px;
+  }
+  
+  .sidebar ul li ul li a {
+	padding: 8px 10px;
+	font-size: 0.95rem;
+  }
+  
+  /* Nội dung chính */
+  .admin-content {
+	flex: 1;
+	padding: 30px;
+	background-color: #fff;
+	box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+	margin: 20px;
+	border-radius: 8px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+	.admin-container {
+	  flex-direction: column;
+	}
+	
+	.sidebar {
+	  width: 100%;
+	  padding: 20px;
+	  text-align: center;
+	}
+	
+	.sidebar ul li {
+	  margin-bottom: 15px;
+	}
+	
+	.admin-content {
+	  margin: 10px;
+	  padding: 20px;
+	}
+  }
+  

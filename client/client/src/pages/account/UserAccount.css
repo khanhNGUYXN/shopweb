@@ -1,0 +1,143 @@
+.user-account-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 8%;
+  padding: 20px;
+}
+
+.user-account-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.user-account-content {
+  display: flex;
+  gap: 20px;
+}
+
+/* Sidebar bên trái */
+.user-account-sidebar {
+  width: 200px;
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+}
+
+.user-account-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-account-sidebar li {
+  margin-bottom: 10px;
+}
+
+.user-account-sidebar li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Nội dung chính bên phải */
+.user-account-main {
+  flex: 1;
+}
+
+.user-account-main h3 {
+  margin-top: 0;
+}
+
+.user-account-main p {
+  margin: 5px 0;
+}
+
+.user-account-main a {
+  color: blue;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.user-account-orders {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+ul li a {
+  color: #333; /* Màu mặc định */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: #ff5722; /* Màu khi hover */
+}
+
+/* Responsive Styles */
+
+/* Khi màn hình dưới 1024px: giảm gap và điều chỉnh padding */
+@media (max-width: 1024px) {
+  .user-account-container {
+    padding: 15px;
+  }
+  .user-account-content {
+    gap: 15px;
+  }
+  .user-account-sidebar {
+    width: 180px;
+    padding-right: 15px;
+  }
+  .user-account-title {
+    font-size: 22px;
+  }
+}
+
+/* Khi màn hình dưới 768px: chuyển layout sang dạng cột */
+@media (max-width: 768px) {
+  .user-account-container {
+    margin-top: 5%;
+    padding: 10px;
+  }
+  .user-account-content {
+    flex-direction: column;
+  }
+  .user-account-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    padding-right: 0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .user-account-main {
+    width: 100%;
+  }
+  .user-account-title {
+    font-size: 20px;
+    text-align: center;
+  }
+  ul li a {
+    text-align: center;
+    display: block;
+  }
+}
+
+/* Khi màn hình dưới 480px: giảm kích thước font và padding cho nội dung */
+@media (max-width: 480px) {
+  .user-account-container {
+    margin-top: 5%;
+    padding: 8px;
+  }
+  .user-account-title {
+    font-size: 18px;
+  }
+  .user-account-sidebar li {
+    margin-bottom: 8px;
+  }
+  .user-account-main p {
+    font-size: 14px;
+  }
+  ul li a {
+    font-size: 14px;
+  }
+}

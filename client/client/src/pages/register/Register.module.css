@@ -1,0 +1,185 @@
+.registerContainer {
+  display: flex;
+  width: 60%;
+  margin: 10% auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.registerLeft {
+  width: 40%;
+  background: #f4f4f4;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 2px solid #ddd; /* Thêm border bên phải */
+}
+
+.registerLeft h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.underLine {
+  width: 50px;
+  height: 4px;
+  background: #333; /* Màu xanh chính */
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.registerRight {
+  width: 60%;
+  padding: 40px;
+  background: white;
+}
+
+.inputWrapper {
+  margin-bottom: 15px;
+}
+
+.inputWrapper input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.inputWrapper input:focus {
+  border-color: #333;
+  outline: none;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.actionRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btnRegister {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btnRegister:hover {
+  background: #fff;
+  color: #333;
+  border: 1px solid black;
+}
+
+.links {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+
+/* Khi màn hình dưới 1024px: giảm padding và tỷ lệ container */
+@media (max-width: 1024px) {
+  .registerContainer {
+    width: 80%;
+    margin: 8% auto;
+  }
+  .registerLeft {
+    padding: 30px;
+  }
+  .registerRight {
+    padding: 30px;
+  }
+  .registerLeft h1 {
+    font-size: 22px;
+  }
+  .underLine {
+    width: 45px;
+    height: 4px;
+  }
+}
+
+/* Khi màn hình dưới 768px: chuyển layout sang dạng cột */
+@media (max-width: 768px) {
+  .registerContainer {
+    flex-direction: column;
+    width: 90%;
+    margin: 5% auto;
+  }
+  .registerLeft,
+  .registerRight {
+    width: 100%;
+    padding: 20px;
+  }
+  .registerLeft {
+    border-right: none;
+    border-bottom: 2px solid #ddd;
+  }
+  .registerLeft h1 {
+    font-size: 20px;
+  }
+  .underLine {
+    width: 40px;
+    height: 3px;
+    margin-bottom: 20px;
+  }
+  .btnRegister {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Khi màn hình dưới 480px: tối ưu cho mobile */
+@media (max-width: 480px) {
+  .registerContainer {
+    width: 95%;
+    margin: 5% auto;
+  }
+  .registerLeft,
+  .registerRight {
+    padding: 15px;
+  }
+  .registerLeft h1 {
+    font-size: 18px;
+  }
+  .underLine {
+    width: 35px;
+    height: 3px;
+  }
+  .inputWrapper input {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .btnRegister {
+    font-size: 13px;
+    padding: 8px;
+  }
+  .links {
+    font-size: 12px;
+  }
+}

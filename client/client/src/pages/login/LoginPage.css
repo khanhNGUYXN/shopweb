@@ -1,0 +1,198 @@
+/* Tổng thể container: chia 2 cột */
+.login-container {
+  display: flex;
+  height: 100vh; /* Full chiều cao màn hình, tuỳ chọn */
+  background-color: #fff; /* Màu nền trắng */
+}
+
+/* Cột bên trái */
+.login-left {
+  margin-left: 10%;
+  flex: 1; /* Chiếm 1 phần */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 80px; /* Canh lề trái tùy ý */
+  background-color: #fff;
+}
+
+.login-left h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+/* Dòng kẻ ngang ngắn */
+.under-line {
+  width: 60px;
+  height: 3px;
+  background-color: #000;
+  margin-bottom: 40px;
+}
+
+/* Cột bên phải */
+.login-right {
+  flex: 2; /* Chiếm 2 phần */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #fff;
+  margin-right: 10%;
+}
+
+/* Form */
+form {
+  width: 100%;
+  max-width: 400px; /* Độ rộng tối đa của form */
+}
+
+/* Ô input */
+.input-wrapper {
+  margin-bottom: 16px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 25px;
+  padding: 12px;
+  border: none;
+  background-color: #eee; /* Màu xám nhạt */
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border: none; /* Nếu muốn loại bỏ border hoàn toàn */
+}
+
+/* Row chứa nút login và link */
+.action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Nút đăng nhập */
+.btn-login {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  padding: 12px 16px;
+  border: 2px solid #333;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+/* Pseudo-element tạo lớp overlay */
+.btn-login::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+/* Khi hover vào nút */
+.btn-login:hover {
+  color: #000;
+}
+
+/* Hiệu ứng overlay trượt */
+.btn-login:hover::after {
+  left: 0;
+}
+
+/* Link */
+.links {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.links a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 4px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: #3b8fd8;
+}
+
+/* Responsive Styles */
+
+/* Khi màn hình dưới 1024px */
+@media (max-width: 1024px) {
+  .login-left {
+    padding-left: 40px;
+    margin-left: 5%;
+  }
+  .login-right {
+    padding: 30px;
+    margin-right: 5%;
+  }
+  .login-left h1 {
+    font-size: 28px;
+  }
+}
+
+/* Khi màn hình dưới 768px: chuyển layout thành cột */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .login-left, .login-right {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-left {
+    padding-top: 40px;
+  }
+  .login-right {
+    padding-bottom: 40px;
+  }
+  .under-line {
+    margin: 0 auto 40px;
+  }
+  .action-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Khi màn hình dưới 480px: tối ưu thêm cho mobile */
+@media (max-width: 480px) {
+  .login-left h1 {
+    font-size: 24px;
+  }
+  .input-wrapper input {
+    padding: 10px;
+    font-size: 13px;
+  }
+  .btn-login {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  .links {
+    font-size: 12px;
+  }
+}

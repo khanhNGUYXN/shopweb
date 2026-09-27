@@ -1,0 +1,265 @@
+/* ========== Header chung ========== */
+.header {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.1s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* Container */
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== KHI CHƯA CUỘN ========== */
+.top-row {
+  height: 80px; /* Chiều cao cho phần logo to */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Logo ở giữa */
+}
+
+.top-row .logo img {
+  height: 60px;
+}
+
+/* Nav bên dưới logo (căn giữa) */
+.nav-below {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.nav-below ul {
+  list-style: none;
+  display: inline-flex;  /* Hiển thị theo dòng, cho phép căn giữa */
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Icon ở bên phải, cách lề phải 10% */
+.top-icons {
+  position: absolute;
+  right: 10%;
+  top: 0;
+  height: 80px; /* Trùng với top-row */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.4rem;
+}
+
+/* ========== KHI CUỘN ========== */
+.header--scrolled {
+  height: 60px; /* Giảm chiều cao khi cuộn */
+}
+
+.scrolled-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.scrolled-row .logo img {
+  height: 40px;
+}
+
+/* Nav khi cuộn */
+.scrolled-row .nav ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Icon bên phải trong trạng thái cuộn */
+.scrolled-row .header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.4rem;
+}
+
+/* ========== Icon chung ========== */
+.icon {
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.icon:hover {
+  color: #ff6600;
+}
+
+.header-icons .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.8rem;
+}
+
+.user-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* user-dropdown với hiệu ứng trượt xuống */
+.user-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  min-width: 130px;
+  text-align: center;
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.user-avatar.active .user-dropdown {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.user-dropdown a {
+  font-size: medium;
+  font-weight: 600;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.user-dropdown a:hover {
+  background: #f7f7f7;
+  color: #ff6600;
+}
+
+/* ========== Nav chung ========== */
+.nav ul {
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: large;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------------------- */
+/* Icon giỏ hàng */
+.icon.fa_cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  z-index: 10;
+}
+
+/* ===================== */
+/* Responsive cho màn hình lớn */
+@media screen and (min-width: 1001px) {
+  /* Hiển thị nav và ẩn icon menu */
+  .header-icons .icon.fa_bars {
+    display: none;
+  }
+  .nav-below, .scrolled-nav {
+    display: block;
+  }
+}
+
+/* Responsive cho màn hình nhỏ */
+@media screen and (max-width: 1000px) {
+  /* Ẩn nav cũ, hiển thị icon menu */
+  .nav-below, .scrolled-nav {
+    display: none;
+  }
+  .icon.fa_bars {
+    display: flex !important;
+  }
+  .header-icons .user-avatar {
+    display: none !important;
+  }
+  
+  /* Điều chỉnh vị trí logo, icon cho gọn gàng hơn */
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .top-row {
+    justify-content: flex-start;
+    padding: 0 1rem;
+  }
+  
+  .top-icons {
+    position: static;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  /* Tùy chỉnh kích thước font và padding nếu cần */
+  .nav a {
+    font-size: medium;
+  }
+}

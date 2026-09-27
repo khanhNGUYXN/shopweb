@@ -1,0 +1,63 @@
+/* Form.module.css */
+
+.formContainer {
+    width: 100%;
+    max-width: 500px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border 0.2s;
+  }
+  
+  .input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  .checkboxGroup {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkboxLabel input {
+    margin-right: 5px;
+  }
+  
+  .submitButton {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .submitButton:hover {
+    background-color: #45a049;
+  }
+  

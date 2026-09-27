@@ -1,0 +1,174 @@
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 0 200px;
+  margin: 24px auto;
+}
+
+.product-card {
+  width: 300px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 12px 0 8px;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #000;
+}
+
+.custom-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* Thanh lọc */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-right: 12%;
+  justify-content: flex-end;
+}
+
+.filter-bar label {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.filter-bar select {
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f2f2f2;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 8px;
+}
+
+.filter-bar select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Thanh phân trang */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  border: none;
+  background-color: #f2f2f2;
+  padding: 8px 12px;
+  margin: 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #ddd;
+}
+
+.pagination button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
+
+/* Khi màn hình dưới 1024px: giảm padding container */
+@media (max-width: 1024px) {
+  .product-list {
+    padding: 0 100px;
+    gap: 24px;
+  }
+  .product-card {
+    width: 260px;
+  }
+  .product-image {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* Khi màn hình dưới 768px: chuyển padding và sắp xếp lại */
+@media (max-width: 768px) {
+  .product-list {
+    padding: 0 30px;
+    gap: 20px;
+  }
+  .product-card {
+    width: 220px;
+  }
+  .product-image {
+    width: 220px;
+    height: 220px;
+  }
+  .filter-bar {
+    margin-right: 0;
+    justify-content: center;
+  }
+}
+
+/* Khi màn hình dưới 480px: tối ưu hiển thị cho mobile */
+@media (max-width: 480px) {
+  .product-list {
+    padding: 0 15px;
+    gap: 15px;
+  }
+  .product-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+  .filter-bar {
+    flex-direction: column;
+    gap: 8px;
+    margin-right: 0;
+    text-align: center;
+  }
+  .pagination button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

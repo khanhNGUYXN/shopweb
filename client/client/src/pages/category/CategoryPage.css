@@ -1,0 +1,78 @@
+.category-page {
+  margin-top: 6.4%;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+  padding: 10px 15%; /* Padding ngang dành cho màn hình lớn */
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+/* Chèn dấu "/" giữa các span */
+.breadcrumb span::after {
+  content: "/";
+  margin: 0 5px;
+  color: #ccc;
+}
+.breadcrumb span:last-of-type::after {
+  content: "";
+}
+.breadcrumb strong {
+  color: #333;
+}
+
+/* Sản phẩm */
+.product_list {
+  padding: 0 5%;
+}
+
+.product_list h1 {
+  padding: 0 12%;
+}
+
+/* Responsive Styles */
+
+/* Khi màn hình dưới 1024px */
+@media (max-width: 1024px) {
+  .breadcrumb {
+    padding: 10px 10%; /* Giảm padding ngang */
+    font-size: 16px;
+  }
+  .product_list h1 {
+    padding: 0 8%;
+  }
+}
+
+/* Khi màn hình dưới 768px */
+@media (max-width: 768px) {
+  .breadcrumb {
+    padding: 10px 5%;
+    font-size: 14px;
+  }
+  .product_list {
+    padding: 0 3%;
+  }
+  .product_list h1 {
+    padding: 0 5%;
+    font-size: 20px;
+  }
+}
+
+/* Khi màn hình dưới 480px */
+@media (max-width: 480px) {
+  .breadcrumb {
+    padding: 8px 3%;
+    font-size: 13px;
+  }
+  .product_list {
+    padding: 0 2%;
+  }
+  .product_list h1 {
+    padding: 0 3%;
+    font-size: 18px;
+  }
+}

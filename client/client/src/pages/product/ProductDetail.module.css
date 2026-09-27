@@ -1,0 +1,320 @@
+.detailContainer {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 6%;
+}
+
+.breadcrumb {
+  padding: 10px 10%;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+/* Container chứa 2 cột: Gallery và Info */
+.productDetailContainer {
+  display: flex;
+  gap: 20px;
+  padding: 10px 10%;
+}
+
+/* Gallery bên trái */
+.galleryContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnailList {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.thumbnailItem {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumbnailItem.active {
+  border-color: #333;
+}
+
+/* Main image container */
+.mainImageContainer {
+  position: relative;
+  margin-left: 8%;
+  width: 450px; /* kích thước mặc định cho desktop */
+  height: 450px;
+  overflow: hidden;
+}
+
+.mainImageWrapper .mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arrowBtn {
+  position: absolute;
+  top: 50%;              /* căn giữa theo chiều dọc */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.arrowBtn.left {
+  left: 10px;
+}
+
+.arrowBtn.right {
+  right: 10px;
+}
+
+/* Thông tin sản phẩm bên phải */
+.productInfo {
+  flex: 1;
+}
+
+.productName {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.productSku,
+.productPrice {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.colorSelection,
+.quantitySelection {
+  margin-bottom: 15px;
+}
+
+/* Nút màu */
+.colorBtn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.colorBtn.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/* Nút size */
+.sizeBtn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sizeBtn.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/* Phần chọn số lượng */
+.quantitySelection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 200px;
+  margin: 15px -20px;
+}
+
+.quantityBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #ccc;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.quantityBtn:hover {
+  background-color: #333;
+}
+
+.quantityInput {
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.quantityInput:focus {
+  border-color: #333;
+}
+
+/* Nút thêm vào giỏ */
+.addToCartBtn {
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.addToCartBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.addToCartBtn:hover {
+  color: #333;
+}
+
+.addToCartBtn:hover::before {
+  left: 0;
+}
+
+/* Mô tả sản phẩm */
+.productDescription {
+  margin-top: 20px;
+}
+
+/* Media Queries */
+
+/* Khi màn hình dưới 1300px: giảm kích thước main image */
+@media (max-width: 1300px) {
+  .mainImageContainer {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Khi màn hình dưới 1024px: chuyển layout sang cột */
+@media (max-width: 1024px) {
+  .productDetailContainer {
+    flex-direction: column;
+    padding: 0 5%;
+  }
+  .galleryContainer, .productInfo {
+    width: 100%;
+  }
+  .mainImageContainer {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1; /* đảm bảo tỷ lệ hình ảnh */
+  }
+  .mainImageWrapper .mainImage {
+    width: 100%;
+    height: 100%;
+  }
+  .productName {
+    font-size: 24px;
+  }
+}
+
+/* Khi màn hình dưới 768px: tối ưu cho tablet */
+@media (max-width: 768px) {
+  .breadcrumb {
+    padding: 10px 5%;
+    font-size: 13px;
+  }
+  .productDetailContainer {
+    padding: 0 3%;
+    gap: 10px;
+  }
+  .thumbnailItem {
+    width: 50px;
+    height: 50px;
+  }
+  .productName {
+    font-size: 22px;
+  }
+  .productInfo {
+    font-size: 14px;
+  }
+  .addToCartBtn {
+    padding: 0.7rem 1.2rem;
+    font-size: 14px;
+  }
+}
+
+/* Khi màn hình dưới 480px: tối ưu cho điện thoại */
+@media (max-width: 480px) {
+  .breadcrumb {
+    padding: 8px 3%;
+    font-size: 12px;
+  }
+  .productDetailContainer {
+    flex-direction: column;
+    padding: 0 3%;
+  }
+  .thumbnailList {
+    overflow-x: auto;
+  }
+  .thumbnailItem {
+    width: 40px;
+    height: 40px;
+  }
+  .mainImageContainer {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+  .productName {
+    font-size: 20px;
+  }
+  .productPrice {
+    font-size: 14px;
+  }
+  .quantitySelection {
+    max-width: 150px;
+  }
+  .quantityBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+  .quantityInput {
+    width: 50px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  .addToCartBtn {
+    padding: 0.6rem 1rem;
+    font-size: 13px;
+  }
+  .productDescription {
+    font-size: 14px;
+  }
+}

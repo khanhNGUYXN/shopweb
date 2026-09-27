@@ -1,0 +1,152 @@
+/* Footer chung */
+.footer {
+  background-color: #fff;
+  color: #333;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+}
+
+/* Container */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;  /* Cho responsive: tự xuống hàng nếu hẹp */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Mỗi cột */
+.footer-column {
+  flex: 1 1 200px; /* Mỗi cột tối thiểu 200px, tự co giãn */
+  min-width: 200px;
+}
+
+/* Tiêu đề cột */
+.footer-column h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* Danh sách */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+/* Tạo gạch đầu dòng (dấu -) */
+.footer-column ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: #999;
+}
+
+/* Mạng xã hội */
+.social-icons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 2.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-right: 20px;
+}
+
+.social-icons a:hover {
+  color: #ff6600;
+}
+
+/* Các badge chứng nhận */
+.certification img {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  width: 150px;
+  height: auto;
+}
+
+/* Phần copy-right dưới cùng */
+.footer-copy {
+  text-align: center;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  border-top: 1px dashed #ccc; /* nét đứt giống ảnh mẫu */
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Responsive Styles */
+
+/* Khi màn hình dưới 1024px: giảm gap và kích thước font chữ một chút */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+  }
+  .social-icons a {
+    font-size: 2rem;
+    margin-right: 15px;
+  }
+  .certification img {
+    width: 130px;
+  }
+}
+
+/* Khi màn hình dưới 768px: cột Footer sẽ tự xếp thành 2 hàng hoặc 1 cột */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .footer-column {
+    min-width: 100%;
+    text-align: center;
+  }
+  .footer-column ul li {
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+  }
+  .footer-column ul li::before {
+    display: none;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .footer-copy {
+    font-size: 0.75rem;
+  }
+}
+
+/* Khi màn hình dưới 480px: tối ưu kích thước font chữ và khoảng cách */
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0;
+    font-size: 0.8rem;
+  }
+  .social-icons a {
+    font-size: 1.8rem;
+    margin-right: 10px;
+  }
+  .certification img {
+    width: 110px;
+  }
+  .footer-copy {
+    font-size: 0.7rem;
+  }
+}

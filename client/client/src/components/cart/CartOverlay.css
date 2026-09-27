@@ -1,0 +1,285 @@
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 200;
+}
+
+.cart-content {
+  background: #fff;
+  width: 33%;
+  max-width: 600px;
+  padding: 2rem;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Animation khi mở */
+.slide-in {
+  animation: slideInFromRight 0.4s ease-out forwards;
+}
+
+/* Animation khi đóng */
+.slide-out {
+  animation: slideOutToRight 0.4s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Danh sách sản phẩm */
+.cart-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.item-left {
+  flex-shrink: 0;
+}
+
+.item-image {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.item-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-name {
+  font-weight: 500;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.item-variant {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quantity-box input {
+  width: 50px;
+  text-align: center;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.item-price {
+  font-weight: 500;
+}
+
+/* Phần tổng tiền và nút hành động */
+.cart-summary {
+  margin-top: 1rem;
+}
+
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cart-actions button {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+  color: #fff;
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.cart-actions button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: left 0.4s ease;
+  z-index: 1;
+}
+
+.cart-actions button:hover::before {
+  left: 0;
+}
+
+.cart-actions button:hover {
+  color: #333;
+  border-color: #333;
+}
+
+/* Responsive styles */
+
+/* Khi màn hình dưới 1024px: giảm kích thước cart-content */
+@media (max-width: 1024px) {
+  .cart-content {
+    width: 40%;
+    padding: 1.5rem;
+  }
+  
+  .item-image {
+    width: 90px;
+    height: 110px;
+  }
+  
+  .quantity-box input {
+    width: 45px;
+  }
+}
+
+/* Khi màn hình dưới 768px: cart-content chiếm phần lớn màn hình */
+@media (max-width: 768px) {
+  .cart-content {
+    width: 80%;
+    max-width: none;
+    padding: 1rem;
+  }
+  
+  .close-btn {
+    font-size: 1.3rem;
+  }
+  
+  .item-image {
+    width: 80px;
+    height: 100px;
+  }
+  
+  .quantity-box input {
+    width: 40px;
+  }
+  
+  .cart-actions button {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+}
+
+/* Khi màn hình dưới 480px: tối ưu hơn cho thiết bị di động */
+@media (max-width: 480px) {
+  .cart-content {
+    width: 100%;
+    padding: 0.75rem;
+  }
+  
+  .close-btn {
+    font-size: 1.2rem;
+  }
+  
+  h3 {
+    font-size: 1rem;
+  }
+  
+  .item-image {
+    width: 70px;
+    height: 90px;
+  }
+  
+  .item-name {
+    font-size: 0.9rem;
+  }
+  
+  .item-variant,
+  .item-price {
+    font-size: 0.8rem;
+  }
+  
+  .quantity-box input {
+    width: 35px;
+    padding: 0.2rem;
+  }
+  
+  .cart-actions button {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+}
